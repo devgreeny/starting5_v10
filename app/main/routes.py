@@ -78,6 +78,21 @@ def show_quiz():
         for pl in data["players"]:
             normalise_usc(pl, conf_map)
 
+        quiz_key = os.path.basename(qp)
+        time_taken = request.form.get("time_taken", type=int)
+
+        existing_score = None
+        if current_user.is_authenticated:
+            today = datetime.utcnow().date()
+            existing_score = (
+                ScoreLog.query.filter(
+                    ScoreLog.user_id == current_user.id,
+                    ScoreLog.quiz_id == quiz_key,
+                    func.date(ScoreLog.timestamp) == today,
+                )
+                .first()
+            )
+
         results, correct_answers, share_statuses = [], [], []
         score, max_points = 0.0, 0.0
 
@@ -116,7 +131,7 @@ def show_quiz():
                 correct_answers.append(f"I am from {country} and played for {team_name}")
 
              # Log the guess only for authenticated users
-            if current_user.is_authenticated:
+            if current_user.is_authenticated and not existing_score:
                 guess_log = GuessLog(
                     user_id=current_user.id,
                     player_name=name,
@@ -127,17 +142,20 @@ def show_quiz():
                 )
                 db.session.add(guess_log)
 
-        quiz_key = os.path.basename(qp)
-        time_taken = request.form.get("time_taken", type=int)
-        score_entry = ScoreLog(
-            quiz_id=quiz_key,
-            user_id=current_user.id if current_user.is_authenticated else None,
-            score=score,
-            max_points=max_points,
-            time_taken=time_taken,
-        )
-        db.session.add(score_entry)
-        db.session.commit()
+        if not existing_score:
+            score_entry = ScoreLog(
+                quiz_id=quiz_key,
+                user_id=current_user.id if current_user.is_authenticated else None,
+                score=score,
+                max_points=max_points,
+                time_taken=time_taken,
+            )
+            db.session.add(score_entry)
+            db.session.commit()
+        else:
+            score = existing_score.score
+            max_points = existing_score.max_points
+            time_taken = existing_score.time_taken
         
         streak = 0
         if current_user.is_authenticated:

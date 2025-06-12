@@ -114,23 +114,19 @@
       {% if results %}
       <div class="side-boxes">
         <div class="score-area">
+          <div class="score-title">Today's Performance</div>
+          <div class="raw-score">{{ score }} / {{ max_points }} points</div>
           <div class="percentile-row">
-            <span class="percent-text">You scored in the {{ percentile }}th percentile of players</span>
+            <span class="percent-label">Percentile: {{ percentile }}th</span>
             <div class="bar">
               <div class="bar-fill percentile-fill" style="width: 0%;"></div>
             </div>
-            </div>
-            <p class="score-line">You scored {{ score }} out of {{ max_points }}</p>
-            {% if performance_text %}
-              <p class="performance-line">{{ performance_text }}</p>
-            {% endif %}
-            <div class="share-row">
-              <div class="share-row">
-                <button id="share-btn" type="button">Share</button>
-                <span id="share-confirm" style="display:none">Copied to clipboard!</span>
-              </div>
-            </div>
           </div>
+          <div class="share-row">
+            <button id="share-btn" type="button">Share your score 🔗</button>
+            <span id="share-confirm" style="display:none">Copied!</span>
+          </div>
+        </div>
           {% if current_user.is_authenticated %}
           <div id="user-stats-box" class="signup-box" style="display:none">
             <div class="stat-half">
@@ -541,7 +537,6 @@
   if (hasResults) {
     localStorage.setItem(key, quizId);
     const pct = {{ percentile|default(0) }};
-    $('.percent-text').text(`You scored in the ${pct}th percentile of players`);
     requestAnimationFrame(() => {
       $('.percentile-fill').css('width', pct + '%');
     });
