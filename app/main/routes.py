@@ -11,12 +11,50 @@ bp = Blueprint("main", __name__)
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 QUIZ_DIR     = os.path.join(PROJECT_ROOT, "app", "static", "preloaded_quizzes")
 CURRENT_DIR  = os.path.join(PROJECT_ROOT, "app", "static", "current_quiz")
-CONFS        = os.path.join(PROJECT_ROOT, "college_confs.json")
+CBB_CSV      = os.path.join(PROJECT_ROOT, "app", "static", "json", "cbb25.csv")
 
 
 def load_confs():
-    with open(CONFS, encoding="utf-8") as f:
-        d = json.load(f)
+    """Return a mapping of college names to conferences and a sorted list of names.
+
+    The CSV may come in different shapes. If a header containing "common name"
+    or "conference" exists, those columns are used. Otherwise we fall back to
+    using the second column for the name and the last column for the conference.
+    """
+
+    import csv
+
+    d = {}
+    with open(CBB_CSV, encoding="utf-8") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+
+        # Determine which columns hold the team name and conference
+        name_idx = None
+        conf_idx = None
+        for i, col in enumerate(header):
+            lc = col.strip().lower()
+            if lc in {"common name", "common_name"}:
+                name_idx = i
+            if lc == "conference":
+                conf_idx = i
+
+        if name_idx is None:
+            name_idx = 1 if len(header) > 1 else 0
+        if conf_idx is None:
+            conf_idx = len(header) - 1
+
+        for row in reader:
+            if not row:
+                continue
+            # Ensure indices exist
+            if name_idx >= len(row) or conf_idx >= len(row):
+                continue
+
+            name = row[name_idx].strip()
+            conf = row[conf_idx].strip() or "Other"
+            if name:
+                d[name] = conf
     return d, sorted(d.keys())
 
 

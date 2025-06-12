@@ -1,0 +1,119 @@
+{
+  "season": "2014-15",
+  "game_id": "0021400416",
+  "team_abbr": "MIN",
+  "opponent_abbr": "CLE",
+  "matchup": "MIN vs CLE",
+  "players": [
+    {
+      "name": "Shabazz Muhammad",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203498,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 18,
+        "ast": 2,
+        "reb": 6,
+        "stl": 1,
+        "blk": 1
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.214,
+        "assists_pct": 0.143,
+        "rebounds_pct": 0.231,
+        "defense_pct": 0.1
+      }
+    },
+    {
+      "name": "Thaddeus Young",
+      "school": "Georgia Tech",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 201152,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 13,
+        "ast": 2,
+        "reb": 6,
+        "stl": 3,
+        "blk": 2
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.155,
+        "assists_pct": 0.143,
+        "rebounds_pct": 0.231,
+        "defense_pct": 0.25
+      }
+    },
+    {
+      "name": "Gorgui Dieng",
+      "school": "Louisville",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 203476,
+      "position": "Center",
+      "country": "Senegal",
+      "game_stats": {
+        "pts": 20,
+        "ast": 2,
+        "reb": 11,
+        "stl": 3,
+        "blk": 4
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.238,
+        "assists_pct": 0.143,
+        "rebounds_pct": 0.423,
+        "defense_pct": 0.35
+      }
+    },
+    {
+      "name": "Andrew Wiggins",
+      "school": "Kansas",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 203952,
+      "position": "Forward",
+      "country": "Canada",
+      "game_stats": {
+        "pts": 27,
+        "ast": 2,
+        "reb": 2,
+        "stl": 1,
+        "blk": 1
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.321,
+        "assists_pct": 0.143,
+        "rebounds_pct": 0.077,
+        "defense_pct": 0.1
+      }
+    },
+    {
+      "name": "Zach LaVine",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203897,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 6,
+        "ast": 6,
+        "reb": 1,
+        "stl": 4,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.071,
+        "assists_pct": 0.429,
+        "rebounds_pct": 0.038,
+        "defense_pct": 0.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "season": "2015-16",
+  "game_id": "0021500962",
+  "team_abbr": "LAL",
+  "opponent_abbr": "CLE",
+  "matchup": "CLE vs LAL",
+  "players": [
+    {
+      "name": "Kobe Bryant",
+      "school": "Lower Merion HS (PA)",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 977,
+      "position": "Forward-Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 26.0,
+        "ast": 2.0,
+        "reb": 5.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.351,
+        "assists_pct": 0.222,
+        "rebounds_pct": 0.263,
+        "defense_pct": 0.286
+      }
+    },
+    {
+      "name": "Julius Randle",
+      "school": "Kentucky",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 203944,
+      "position": "Forward-Center",
+      "country": "USA",
+      "game_stats": {
+        "pts": 15.0,
+        "ast": 1.0,
+        "reb": 9.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.203,
+        "assists_pct": 0.111,
+        "rebounds_pct": 0.474,
+        "defense_pct": 0.286
+      }
+    },
+    {
+      "name": "Roy Hibbert",
+      "school": "Georgetown",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 201579,
+      "position": "Center",
+      "country": "USA",
+      "game_stats": {
+        "pts": 4.0,
+        "ast": 0.0,
+        "reb": 0.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.054,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.143
+      }
+    },
+    {
+      "name": "Jordan Clarkson",
+      "school": "Missouri",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 203903,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 5.0,
+        "ast": 1.0,
+        "reb": 1.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.068,
+        "assists_pct": 0.111,
+        "rebounds_pct": 0.053,
+        "defense_pct": 0.286
+      }
+    },
+    {
+      "name": "D'Angelo Russell",
+      "school": "Ohio State",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 1626156,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 24.0,
+        "ast": 5.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.324,
+        "assists_pct": 0.556,
+        "rebounds_pct": 0.211,
+        "defense_pct": 0.0
+      }
+    }
+  ]
+}

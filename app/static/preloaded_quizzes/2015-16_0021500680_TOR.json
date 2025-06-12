@@ -1,0 +1,119 @@
+{
+  "season": "2015-16",
+  "game_id": "0021500680",
+  "team_abbr": "TOR",
+  "opponent_abbr": "WAS",
+  "matchup": "WAS vs TOR",
+  "players": [
+    {
+      "name": "James Johnson",
+      "school": "Wake Forest",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 201949,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 2,
+        "ast": 2,
+        "reb": 2,
+        "stl": 0,
+        "blk": 1
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.029,
+        "assists_pct": 0.2,
+        "rebounds_pct": 0.067,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Luis Scola",
+      "school": "Tau Ceramica",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 2449,
+      "position": "Forward",
+      "country": "Argentina",
+      "game_stats": {
+        "pts": 8,
+        "ast": 0,
+        "reb": 8,
+        "stl": 1,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.116,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.267,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Jonas Valančiūnas",
+      "school": "Lietuvos rytas Vilnius",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 202685,
+      "position": "Center",
+      "country": "Lithuania",
+      "game_stats": {
+        "pts": 13,
+        "ast": 0,
+        "reb": 12,
+        "stl": 0,
+        "blk": 1
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.188,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.4,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "DeMar DeRozan",
+      "school": "USC",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201942,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 17,
+        "ast": 4,
+        "reb": 4,
+        "stl": 1,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.246,
+        "assists_pct": 0.4,
+        "rebounds_pct": 0.133,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Kyle Lowry",
+      "school": "Villanova",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 200768,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 29,
+        "ast": 4,
+        "reb": 4,
+        "stl": 2,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.42,
+        "assists_pct": 0.4,
+        "rebounds_pct": 0.133,
+        "defense_pct": 0.333
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "season": "2016-17",
+  "game_id": "0021600302",
+  "team_abbr": "SAC",
+  "opponent_abbr": "NYK",
+  "matchup": "SAC vs NYK",
+  "players": [
+    {
+      "name": "DeMarcus Cousins",
+      "school": "Kentucky",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 202326,
+      "position": "Center",
+      "country": "USA",
+      "game_stats": {
+        "pts": 36.0,
+        "ast": 4.0,
+        "reb": 13.0,
+        "stl": 1.0,
+        "blk": 3.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.474,
+        "assists_pct": 0.286,
+        "rebounds_pct": 0.342,
+        "defense_pct": 0.364
+      }
+    },
+    {
+      "name": "Rudy Gay",
+      "school": "UConn",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 200752,
+      "position": "Forward-Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 22.0,
+        "ast": 4.0,
+        "reb": 9.0,
+        "stl": 3.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.289,
+        "assists_pct": 0.286,
+        "rebounds_pct": 0.237,
+        "defense_pct": 0.273
+      }
+    },
+    {
+      "name": "Kosta Koufos",
+      "school": "Ohio State",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201585,
+      "position": "Center",
+      "country": "USA",
+      "game_stats": {
+        "pts": 2.0,
+        "ast": 0.0,
+        "reb": 11.0,
+        "stl": 0.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.026,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.289,
+        "defense_pct": 0.091
+      }
+    },
+    {
+      "name": "Arron Afflalo",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201167,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 3.0,
+        "ast": 0.0,
+        "reb": 2.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.039,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.053,
+        "defense_pct": 0.091
+      }
+    },
+    {
+      "name": "Darren Collison",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201954,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 13.0,
+        "ast": 6.0,
+        "reb": 3.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.171,
+        "assists_pct": 0.429,
+        "rebounds_pct": 0.079,
+        "defense_pct": 0.182
+      }
+    }
+  ]
+}

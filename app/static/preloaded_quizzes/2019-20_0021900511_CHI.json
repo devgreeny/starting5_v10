@@ -1,0 +1,119 @@
+{
+  "season": "2019-20",
+  "game_id": "0021900511",
+  "team_abbr": "CHI",
+  "opponent_abbr": "UTA",
+  "matchup": "UTA vs CHI",
+  "players": [
+    {
+      "name": "Kris Dunn",
+      "school": "Providence",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 1627739,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 5.0,
+        "ast": 4.0,
+        "reb": 8.0,
+        "stl": 0.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.067,
+        "assists_pct": 0.211,
+        "rebounds_pct": 0.242,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Lauri Markkanen",
+      "school": "Arizona",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 1628374,
+      "position": "Forward-Center",
+      "country": "Finland",
+      "game_stats": {
+        "pts": 18.0,
+        "ast": 2.0,
+        "reb": 8.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.24,
+        "assists_pct": 0.105,
+        "rebounds_pct": 0.242,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Wendell Carter Jr.",
+      "school": "Duke",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 1628976,
+      "position": "Center-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 18.0,
+        "ast": 4.0,
+        "reb": 13.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.24,
+        "assists_pct": 0.211,
+        "rebounds_pct": 0.394,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Zach LaVine",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203897,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 26.0,
+        "ast": 5.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.347,
+        "assists_pct": 0.263,
+        "rebounds_pct": 0.121,
+        "defense_pct": 0.333
+      }
+    },
+    {
+      "name": "Tomas Satoransky",
+      "school": "FC Barcelona",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 203107,
+      "position": "Guard",
+      "country": "Czech Republic",
+      "game_stats": {
+        "pts": 8.0,
+        "ast": 4.0,
+        "reb": 0.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.107,
+        "assists_pct": 0.211,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.333
+      }
+    }
+  ]
+}

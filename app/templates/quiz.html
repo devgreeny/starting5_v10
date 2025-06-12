@@ -645,7 +645,8 @@
   function revealHint($card, conf) {
     const $sel = $card.find('.guess-select');
     const full = $sel.data('full-options') || [];
-    const filt = full.filter((o) => o.conf === conf || o.conf === 'Other');
+    let filt = full.filter((o) => o.conf === conf);
+    if (!filt.length) filt = full;
     $sel.empty().append('<option disabled selected></option>');
     filt.forEach((o) => $sel.append(new Option(o.text, o.id, false, false)));
 

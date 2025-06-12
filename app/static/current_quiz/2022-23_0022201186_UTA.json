@@ -1,0 +1,119 @@
+{
+  "season": "2022-23",
+  "game_id": "0022201186",
+  "team_abbr": "UTA",
+  "opponent_abbr": "LAL",
+  "matchup": "LAL vs UTA",
+  "players": [
+    {
+      "name": "Luka Samanic",
+      "school": "Union Olimpija",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1629677,
+      "position": "Forward",
+      "country": "Croatia",
+      "game_stats": {
+        "pts": 12.0,
+        "ast": 2.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.146,
+        "assists_pct": 0.105,
+        "rebounds_pct": 0.167,
+        "defense_pct": 0.167
+      }
+    },
+    {
+      "name": "Kelly Olynyk",
+      "school": "Gonzaga",
+      "school_type": "College",
+      "conference": "West Coast Conference",
+      "player_id": 203482,
+      "position": "Forward-Center",
+      "country": "Canada",
+      "game_stats": {
+        "pts": 23.0,
+        "ast": 7.0,
+        "reb": 7.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.28,
+        "assists_pct": 0.368,
+        "rebounds_pct": 0.292,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Udoka Azubuike",
+      "school": "Kansas",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 1628962,
+      "position": "Center-Forward",
+      "country": "Nigeria",
+      "game_stats": {
+        "pts": 2.0,
+        "ast": 0.0,
+        "reb": 5.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.024,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.208,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Ochai Agbaji",
+      "school": "Kansas",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 1630534,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 22.0,
+        "ast": 3.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.268,
+        "assists_pct": 0.158,
+        "rebounds_pct": 0.167,
+        "defense_pct": 0.333
+      }
+    },
+    {
+      "name": "Talen Horton-Tucker",
+      "school": "Iowa",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 1629659,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 23.0,
+        "ast": 7.0,
+        "reb": 4.0,
+        "stl": 2.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.28,
+        "assists_pct": 0.368,
+        "rebounds_pct": 0.167,
+        "defense_pct": 0.5
+      }
+    }
+  ]
+}

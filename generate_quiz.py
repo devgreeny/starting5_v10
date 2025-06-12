@@ -8,12 +8,14 @@ from nba_api.stats.endpoints import (
 )
 
 # Load and clean NCAA D1 schools
-D1_PATH = "/Users/noah/Downloads/List_of_NCAA_Division_I_institutions_2.csv"
+D1_PATH = "/Users/noah/Desktop/starting5_v9/app/static/json/cbb25.csv"
+
 df_d1 = pd.read_csv(D1_PATH)
+
 df_d1 = pd.DataFrame({
-    "Official": df_d1["Unnamed: 0"],
-    "Common": df_d1["Unnamed: 1"],
-    "Conference": df_d1["Unnamed: 7"]
+    "Official": df_d1["School"],
+    "Common": df_d1["Common name"],
+    "Conference": df_d1["Primary"]
 })
 
 def clean_name(name):

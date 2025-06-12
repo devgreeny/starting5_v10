@@ -1,0 +1,119 @@
+{
+  "season": "2012-13",
+  "game_id": "0021200590",
+  "team_abbr": "SAS",
+  "opponent_abbr": "GSW",
+  "matchup": "GSW vs SAS",
+  "players": [
+    {
+      "name": "Kawhi Leonard",
+      "school": "San Diego State",
+      "school_type": "College",
+      "conference": "Mountain West Conference",
+      "player_id": 202695,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 0.0,
+        "ast": 1.0,
+        "reb": 5.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.0,
+        "assists_pct": 0.077,
+        "rebounds_pct": 0.167,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Tim Duncan",
+      "school": "Wake Forest",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 1495,
+      "position": "Center-Forward",
+      "country": "US Virgin Islands",
+      "game_stats": {
+        "pts": 24.0,
+        "ast": 2.0,
+        "reb": 10.0,
+        "stl": 0.0,
+        "blk": 3.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.296,
+        "assists_pct": 0.154,
+        "rebounds_pct": 0.333,
+        "defense_pct": 0.75
+      }
+    },
+    {
+      "name": "Tiago Splitter",
+      "school": "Bilbao",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 201168,
+      "position": "Center-Forward",
+      "country": "Brazil",
+      "game_stats": {
+        "pts": 19.0,
+        "ast": 2.0,
+        "reb": 9.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.235,
+        "assists_pct": 0.154,
+        "rebounds_pct": 0.3,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Danny Green",
+      "school": "South Carolina",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 201980,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 13.0,
+        "ast": 0.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.16,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.133,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Tony Parker",
+      "school": "Paris Basket Racing",
+      "school_type": "International",
+      "conference": "Other",
+      "player_id": 2225,
+      "position": "Guard",
+      "country": "France",
+      "game_stats": {
+        "pts": 25.0,
+        "ast": 8.0,
+        "reb": 2.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.309,
+        "assists_pct": 0.615,
+        "rebounds_pct": 0.067,
+        "defense_pct": 0.25
+      }
+    }
+  ]
+}
