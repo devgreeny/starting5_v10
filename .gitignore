@@ -1,0 +1,18 @@
+# Bytecode / cache folders
+__pycache__/
+*.pyc
+
+# macOS metadata files
+.DS_Store
+
+# Local CSV you don’t want in the repo
+cbb25.csv
+
+# VSCode, PyCharm, etc. (if you use them)
+.vscode/
+.idea/
+
+# Any other local files you don’t want Git to track
+.DS_Store
+.DS_Store
+.DS_Store

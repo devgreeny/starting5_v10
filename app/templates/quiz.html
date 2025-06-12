@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NBA College Quiz</title>
+
+  <!-- Pixel font & main CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+  />
+
+  <!-- Select2 (unchanged) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+  ></script>
+
+  <!-- ─────────────────────────────────────────────────────────────────────
+       Page‐level overrides (placed *after* style.css so they win):
+       1) Force the dark striped background on the entire page (html+body).
+       2) Pin the auth bar to the top of the viewport.
+  ───────────────────────────────────────────────────────────────────── -->
+  <style>
+    /* ==============================================================================
+       1) FORCE DARK STRIPED BACKGROUND ON HTML + BODY
+       ============================================================================== */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+
+      /* repeating dark/navy stripes behind everything */
+      background-color: #0f172a !important;
+
+      /* make room at top for the fixed auth bar */
+      padding-top: 1.5rem;
+      font-family: 'Press Start 2P', monospace;
+      color: #facc15; /* Gold text by default */
+    }
+
+    /* ==============================================================================
+       2) AUTH BAR: FIXED AT TOP
+       ============================================================================== */
+    .auth-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #0f172a;     /* Same as body background */
+      padding: 0.8rem 2rem;
+      font-size: 0.7rem;
+      color: #e2e8f0;           /* Light gray */
+      text-align: right;
+      z-index: 1000;
+      font-family: 'Press Start 2P', monospace;
+    }
+    .auth-bar a {
+      color: #eab308;           /* Gold */
+      text-decoration: none;
+      margin-left: 0.7rem;
+      transition: color 0.15s;
+    }
+    .auth-bar a:hover {
+      color: #eab308;           /* Orange‐yellow on hover */
+    }
+    .auth-bar .sep {
+      color: #000000;           /* Gray “|” separator */
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ─────────────────────────────────────────────────────────────────────
+       AUTH BAR (fixed to top of viewport)
+  ───────────────────────────────────────────────────────────────────── -->
+  <div class="auth-bar">
+    <a href="{{ url_for('main.home') }}">Home</a>
+    <span class="sep">|</span>
+    {% if current_user.is_authenticated %}
+      Hello <strong>{{ current_user.username }}</strong>
+      <span class="sep">|</span>
+      <a href="{{ url_for('auth.logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <span class="sep">|</span>
+      <a href="{{ url_for('auth.login') }}">Login</a>
+    {% endif %}
+  </div>
+
+  <!-- ─────────────────────────────────────────────────────────────────────
+       MAIN CONTENT WRAPPER
+  ───────────────────────────────────────────────────────────────────── -->
+  <div class="content">
+    <!-- ── Header ─────────────────────────────────────────────────────────── -->
+    <div class="header-container">
+      <div class="header-title">WHERE DID THESE PLAYERS PLAY BEFORE THE NBA?</div>
+      <div class="header-matchup"><span>{{ data.matchup }}</span></div>
+      <div class="header-game_id"><span>Game ID: {{ data.game_id }}</span></div>
+    </div>
+
+    <div class="quiz-wrapper{% if results %} with-score{% endif %}">
+      {% if results %}
+      <div class="side-boxes">
+        <div class="score-area">
+          <div class="percentile-row">
+            <span class="percent-text">You scored in the {{ percentile }}th percentile of players</span>
+            <div class="bar">
+              <div class="bar-fill percentile-fill" style="width: 0%;"></div>
+            </div>
+            </div>
+            <p class="score-line">You scored {{ score }} out of {{ max_points }}</p>
+            {% if performance_text %}
+              <p class="performance-line">{{ performance_text }}</p>
+            {% endif %}
+            <div class="share-row">
+              <div class="share-row">
+                <button id="share-btn" type="button">Share</button>
+                <span id="share-confirm" style="display:none">Copied to clipboard!</span>
+              </div>
+            </div>
+          </div>
+          {% if current_user.is_authenticated %}
+          <div id="user-stats-box" class="signup-box" style="display:none">
+            <div class="stat-half">
+              <span class="stat-label">Streak</span>
+              <span id="streak-count">{{ streak }}</span>
+            </div>
+            <div class="stat-half">
+              <span class="stat-label">Time</span>
+              <span id="time-taken">--:--</span>
+            </div>
+          </div>
+          {% else %}
+        <div id="signup-box" class="signup-box" style="display:none">
+          <p>Sign up to track your scores and compare your ball knowledge to your friends.</p>
+          <a id="signup-btn" href="{{ url_for('auth.register') }}" class="play-again-modal">Sign Up</a>
+        </div>
+        {% endif %}
+        </div>
+      {% endif %}
+
+      {% if show_leaderboard %}
+      <div class="leaderboard-box">
+          <h3>Today's Leaderboard</h3>
+          <ol class="leaderboard-list">
+          {% for row in leaderboard %}
+            <li>{{ row.username }} - {{ row.score }}/{{ row.max_points }} in {{ row.time_taken }}s</li>
+          {% endfor %}
+          </ol>
+          {% if not current_user.is_authenticated %}
+          <p class="signup-note">Sign up to compete on today's leaderboard.</p>
+          <a href="{{ url_for('auth.register') }}" class="play-again-modal">Sign Up</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    <form method="POST" action="{{ url_for('main.show_quiz') }}">
+      <input type="hidden" name="quiz_json_path" value="{{ quiz_json_path }}" />
+      <input type="hidden" name="time_taken" id="time_taken_field" value="0" />
+      
+
+      <!-- ── Top row (players 0–2) ─────────────────────────────────────────── -->
+      <div class="row-top">
+        {% for player in data.players[0:3] %}
+          {% set idx = loop.index0 %}
+          {% if results %}{% set r = results[idx] %}{% endif %}
+
+          <div class="
+                card{% if results %}
+                        {% if r.startswith('✅') %}
+                          correct-card
+                        {% else %}
+                          wrong-card
+                        {% endif %}
+                      {% endif %}
+              "
+               data-school-type="{{ player.school_type }}"
+               data-conference="{{ player.conference }}"
+          >
+            <!-- hidden “hint used” flag -->
+            <input
+              type="hidden"
+              name="hint_used_{{ idx }}"
+              value="0"
+              class="hint-flag"
+            />
+
+            <img
+              src="https://cdn.nba.com/headshots/nba/latest/260x190/{{ player.player_id }}.png"
+              alt="{{ player.name }}"
+            />
+
+            <!-- two-line name -->
+            <h3>
+              {% set parts = player.name.split(' ') %}
+              {% if parts|length > 1 %}
+                {{ parts[0].upper() }}<br />
+                {{ parts[1:]|join(' ')|upper }}
+              {% else %}
+                {{ player.name.upper() }}
+              {% endif %}
+            </h3>
+            <p>{{ player.position }}</p>
+
+            <!-- Pts / Ast / Reb bars -->
+            <div class="stat-row">
+              <span class="stat-label">Pts:</span>
+              <span class="stat-value">{{ player.game_stats.pts|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.points_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Ast:</span>
+              <span class="stat-value">{{ player.game_stats.ast|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.assists_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Reb:</span>
+              <span class="stat-value">{{ player.game_stats.reb|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.rebounds_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+
+            {% if not results %}
+              <!-- dropdown -->
+              <select
+                name="{{ player.name }}"
+                class="guess-select"
+                data-conference="{{ player.conference }}"
+                required
+              >
+                <option disabled selected></option>
+                {% for college in colleges|sort %}
+                  <option
+                    value="{{ college }}"
+                    data-conf="{{ college_confs[college]|default('Other') }}"
+                  >
+                    {{ college }}
+                  </option>
+                {% endfor %}
+              </select>
+
+              <div class="button-row">
+                <button type="button" class="hint-btn">Hint</button>
+                <button type="button" class="random-btn">Random</button>
+              </div>
+
+            <!-- hint text -->
+            <p class="hint-text" style="display:none;">
+              {% if player.school_type == 'College' %}
+                I played in the {{ player.conference }}
+              {% else %}
+                I didn't attend college
+              {% endif %}
+            </p>
+          {% endif %}
+
+            {% if results %}
+              <p class="result">
+                {% if r.startswith('✅') %}
+                  <span class="correct">Correct!</span>
+                {% else %}
+                  <span class="wrong">Incorrect</span>
+                {% endif %}
+                  <span class="answer">{{ correct_answers[idx] }}</span>
+                
+                <!-- Accuracy bar -->
+                <div class="accuracy-bar-row" data-player-name="{{ player.name }}">
+                  <span class="accuracy-value">Loading...</span>
+                  <div class="bar">
+                    <div class="bar-fill accuracy-fill" style="width: 0%;"></div>
+                  </div>
+                </div>
+              </p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- ── Bottom row (players 3–4) ───────────────────────────────────────── -->
+      <div class="row-bottom">
+        {% for player in data.players[3:5] %}
+          {% set idx = loop.index0 + 3 %}
+          {% if results %}{% set r = results[idx] %}{% endif %}
+
+          <div class="
+                card{% if results %}
+                        {% if r.startswith('✅') %}
+                          correct-card
+                        {% else %}
+                          wrong-card
+                        {% endif %}
+                      {% endif %}
+              "
+               data-school-type="{{ player.school_type }}"
+               data-conference="{{ player.conference }}"
+          >
+            <input
+              type="hidden"
+              name="hint_used_{{ idx }}"
+              value="0"
+              class="hint-flag"
+            />
+
+            <img
+              src="https://cdn.nba.com/headshots/nba/latest/260x190/{{ player.player_id }}.png"
+              alt="{{ player.name }}"
+            />
+
+            <h3>
+              {% set parts = player.name.split(' ') %}
+              {% if parts|length > 1 %}
+                {{ parts[0].upper() }}<br />
+                {{ parts[1:]|join(' ')|upper }}
+              {% else %}
+                {{ player.name.upper() }}
+              {% endif %}
+            </h3>
+            <p>{{ player.position }}</p>
+
+            <div class="stat-row">
+              <span class="stat-label">Pts:</span>
+              <span class="stat-value">{{ player.game_stats.pts|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.points_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Ast:</span>
+              <span class="stat-value">{{ player.game_stats.ast|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.assists_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Reb:</span>
+              <span class="stat-value">{{ player.game_stats.reb|int }}</span>
+              <div class="bar">
+                <div
+                  class="bar-fill"
+                  style="width: {{ (player.game_contribution_pct.rebounds_pct * 100)|round(1) }}%;"
+                ></div>
+              </div>
+            </div>
+
+            {% if not results %}
+              <select
+                name="{{ player.name }}"
+                class="guess-select"
+                data-conference="{{ player.conference }}"
+                required
+              >
+                <option disabled selected></option>
+                {% for college in colleges|sort %}
+                  <option
+                    value="{{ college }}"
+                    data-conf="{{ college_confs[college]|default('Other') }}"
+                  >
+                    {{ college }}
+                  </option>
+                {% endfor %}
+              </select>
+
+              <div class="button-row">
+                <button type="button" class="hint-btn">Hint</button>
+                <button type="button" class="random-btn">Random</button>
+              </div>
+
+              <p class="hint-text" style="display:none;">
+                {% if player.school_type == 'College' %}
+                  I played in the {{ player.conference }}
+                {% else %}
+                  I didn't attend college
+                {% endif %}
+              </p>
+            {% endif %}
+
+            {% if results %}
+              <p class="result">
+                {% if r.startswith('✅') %}
+                  <span class="correct">Correct!</span>
+                {% else %}
+                  <span class="wrong">Incorrect</span>
+                {% endif %}
+                  <span class="answer">{{ correct_answers[idx] }}</span>
+                
+                <!-- Accuracy bar -->
+                <div class="accuracy-bar-row" data-player-name="{{ player.name }}">
+                  <span class="accuracy-value">Loading...</span>
+                  <div class="bar">
+                    <div class="bar-fill accuracy-fill" style="width: 0%;"></div>
+                  </div>
+                </div>
+              </p>            
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if not results %}
+        <button type="submit" class="submit-btn">Submit Guesses</button>
+      {% else %}
+        <button class="submit-btn" disabled>Already Scored</button>
+      {% endif %}
+    </form>
+  </div>
+
+    <!-- ── Score Modal ─────────────────────────────────────────────────────── -->
+    {% if not results %}
+      <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+          <section class="scoreboard">
+            <div class="board-section">
+              <div class="label">College players</div>
+              <ul class="rules-list">
+                <li>Exact school — <span class="green">1&nbsp;pt</span></li>
+                <li>Used hint — <span class="orange">0.75&nbsp;pt</span> (max)</li>
+              </ul>
+            </div>
+
+            <div class="board-section">
+              <div class="label">Non-college players</div>
+              <ul class="rules-list">
+                <li>Exact club — <span class="green">1.25&nbsp;pt</span></li>
+                <li>Correct country — 1&nbsp;pt</li>
+              </ul>
+            </div>
+
+            <div class="board-section">
+              <div class="label">Hints</div>
+              <ul class="rules-list">
+                <li>Shows conference <em>or</em> “didn’t attend college.”</li>
+                <li>No penalty on non-college hints.</li>
+                <li>College drops to 0.75&nbsp;pt max.</li>
+              </ul>
+            </div>
+
+            <div class="board-section">
+              <div class="label">Random</div>
+              Fills a random guess for you.
+            </div>
+
+            <div class="board-section">
+              <div class="label">Scoring examples</div>
+              <div class="examples">
+                <div class="example">
+                  <img src="https://cdn.nba.com/headshots/nba/latest/260x190/203114.png" alt="Khris Middleton">
+                  <div class="ex-text">
+                    <span class="player">Khris&nbsp;Middleton</span>
+                    <ul class="points">
+                      <li><span class="green">Texas&nbsp;A&amp;M — 1&nbsp;pt</span></li>
+                      <li><span class="orange">Texas&nbsp;A&amp;M (using hint) — 0.75&nbsp;pt</span></li>
+                      <li><span class="red">Wrong school — 0&nbsp;pt</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="example">
+                  <img src="https://cdn.nba.com/headshots/nba/latest/260x190/203507.png" alt="Giannis Antetokounmpo">
+                  <div class="ex-text">
+                    <span class="player">Giannis&nbsp;Antetokounmpo</span>
+                    <ul class="points">
+                      <li>Greece — 1&nbsp;pt</li>
+                      <li><span class="green">Panathinaikos — 1.25&nbsp;pt</span></li>
+                      <li><span class="red">Wrong guess — 0&nbsp;pt</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="board-section">
+              <div class="label">Total score</div>
+              Your points ÷ puzzle’s full value (max pts never shrink).
+            </div>
+          </section>
+
+          <button id="close-instructions" class="play-again-modal">Start Quiz</button>
+        </div>
+      </div>
+      <div id="limit-modal" class="modal">
+        <div class="modal-content">
+          <p>You've already played today's quiz. Come back tomorrow!</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <!-- /content -->
+
+  <!-- ── JavaScript (Select2, Random, Hint‐modal Logic) ───────────────────── -->
+  <script>
+    $(function () {
+      const quizId = {{ quiz_id|tojson }};
+  const userId = {% if current_user.is_authenticated %}{{ current_user.id }}{% else %}null{% endif %};
+  const key = userId ? `lastPlayedQuiz_${userId}` : 'lastPlayedQuiz_guest';
+  const lastPlayed = localStorage.getItem(key);
+  const hasResults = {{ 'true' if results else 'false' }};
+
+  if (!hasResults) {
+    localStorage.setItem(`quizStart_${quizId}`, Date.now());
+    $('form').on('submit', function () {
+      const start = localStorage.getItem(`quizStart_${quizId}`);
+      if (start) {
+        const elapsed = Math.round((Date.now() - parseInt(start, 10)) / 1000);
+        $('#time_taken_field').val(elapsed);
+      }
+    });
+  }
+
+  if (hasResults) {
+    localStorage.setItem(key, quizId);
+    const pct = {{ percentile|default(0) }};
+    $('.percent-text').text(`You scored in the ${pct}th percentile of players`);
+    requestAnimationFrame(() => {
+      $('.percentile-fill').css('width', pct + '%');
+    });
+  } else if (lastPlayed === quizId) {
+    $('#limit-modal').fadeIn();
+    $('.submit-btn').prop('disabled', true);
+  }
+
+  if (hasResults) {
+    if (userId) {
+      const start = localStorage.getItem(`quizStart_${quizId}`);
+      if (start) {
+        const elapsed = Math.round((Date.now() - parseInt(start, 10)) / 1000);
+        const mins = Math.floor(elapsed / 60);
+        const secs = String(elapsed % 60).padStart(2, '0');
+        $('#time-taken').text(`${mins}:${secs}`);
+        localStorage.removeItem(`quizStart_${quizId}`);
+      }
+      $('#user-stats-box').slideDown();
+    } else {
+      $('#signup-box').slideDown();
+    }
+  }
+
+  const seen = localStorage.getItem('seenInstructions');
+  if (!seen) {
+    $('#instructions-modal').fadeIn();
+  }
+  $('#close-instructions').on('click', function () {
+    $('#instructions-modal').fadeOut();
+    localStorage.setItem('seenInstructions', '1');
+  });
+
+  /* ----- Select2 init ---------------------------------------------------- */
+  $('.guess-select').each(function () {
+    const $sel = $(this);
+    const opts = $sel
+      .find('option')
+      .map(function () {
+        return { id: $(this).val(), text: $(this).text(), conf: $(this).data('conf') };
+      })
+      .get();
+    $sel.data('full-options', opts);
+
+    $sel.select2({
+      width: '100%',
+      placeholder: 'Enter Guess',
+      theme: 'classic',
+      dropdownAutoWidth: true,
+      tags: true,
+      createTag: (p) => ({ id: p.term, text: p.term, conf: 'Other' }),
+    });
+  });
+
+  /* ----- Random button --------------------------------------------------- */
+  $('.random-btn').click(function () {
+    const $sel = $(this).closest('.card').find('.guess-select');
+    const opts = $sel.find('option').not('[disabled]');
+    const pick = opts[Math.floor(Math.random() * opts.length)];
+    $sel.val(pick.value).trigger('change');
+  });
+
+  /* ----- Hint button (with penalty modal) -------------------------------- */
+  $('.hint-btn').click(function () {
+    const $card = $(this).closest('.card');
+    const $flag = $card.find('.hint-flag');
+    const used = $flag.val() === '1';
+    const conf = $card.data('conference');
+
+    if (used) {
+      $card.find('.hint-text').fadeIn();
+      return;
+    }
+
+    $('body')
+      .append(`
+        <div id="hint-penalty-modal" class="modal">
+          <div class="modal-content">
+            <p style="margin-bottom:1rem">
+              Using a hint will limit this player to<br>
+              <span style="color:#facc15">0.75 points</span> max.
+              <br><br>Continue?
+            </p>
+            <button id="hp-yes" class="play-again-modal">Use Hint</button>
+            <button id="hp-no" class="play-again-modal" style="background:#475569;margin-left:1rem">Cancel</button>
+          </div>
+        </div>`)
+      .find('#hint-penalty-modal')
+      .fadeIn();
+
+    $('#hp-yes').on('click', function () {
+      $('#hint-penalty-modal').fadeOut(function () {
+        $(this).remove();
+      });
+      $flag.val('1');
+      revealHint($card, conf);
+    });
+    $('#hp-no').on('click', () =>
+      $('#hint-penalty-modal').fadeOut(function () {
+        $(this).remove();
+      })
+    );
+  });
+
+  /* helper: filter dropdown + show hint text */
+  function revealHint($card, conf) {
+    const $sel = $card.find('.guess-select');
+    const full = $sel.data('full-options') || [];
+    const filt = full.filter((o) => o.conf === conf || o.conf === 'Other');
+    $sel.empty().append('<option disabled selected></option>');
+    filt.forEach((o) => $sel.append(new Option(o.text, o.id, false, false)));
+
+    $sel.select2({
+      width: '100%',
+      placeholder: 'Enter Guess',
+      theme: 'classic',
+      dropdownAutoWidth: true,
+      tags: true,
+      createTag: (p) => ({ id: p.term, text: p.term, conf: 'Other' }),
+    });
+    $card.find('.hint-text').fadeIn();
+  }
+
+
+  // ----- Accuracy fetcher for each player result -----
+  $("[data-player-name]").each(function () {
+    const el = $(this);
+    const playerName = el.data("player-name");
+
+    fetch(`/player_accuracy/${encodeURIComponent(playerName)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const percent = data.accuracy || 0;
+
+        const bar = el.find(".accuracy-fill");
+        const text = el.find(".accuracy-value");
+
+        text.text(`Of other users, ${percent}% guessed ${playerName} correctly.`);
+        text.addClass("show");
+
+        bar.css("width", "0%"); // reset first
+        requestAnimationFrame(() => {
+          bar.css("width", `${percent}%`);
+        });
+      })
+      .catch(() => {
+        el.find(".accuracy-value")
+          .text("Accuracy unavailable")
+          .addClass("show");
+        el.find(".accuracy-fill").css("width", "0%");
+      });
+  });
+
+  const msg = {{ share_message|tojson }};
+  $('#share-btn').on('click', function () {
+    navigator.clipboard.writeText(msg).then(() => {
+      $('#share-confirm').fadeIn().delay(1500).fadeOut();
+    });
+  });
+
+  // Resize sidebar so it stops just shy of the quiz cards
+  function adjustSidebarWidth() {
+    const $sidebar = $('.side-boxes');
+    const $leader = $('.leaderboard-box');
+    const $row = $('.row-top:first');
+    if (!$row.length) return;
+    const rem = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
+    );
+    const gap = 1 * rem; // horizontal spacing between sidebars and cards
+
+    const rect = $row[0].getBoundingClientRect();
+    const leftOffset = $sidebar.length
+      ? parseFloat(getComputedStyle($sidebar[0]).left) || 0
+      : 0;
+    const rightOffset = $leader.length
+      ? parseFloat(getComputedStyle($leader[0]).right) || 0
+      : 0;
+
+    const availLeft = rect.left - leftOffset - gap;
+    const availRight = window.innerWidth - rect.right - rightOffset - gap;
+    const width = Math.max(Math.min(availLeft, availRight), 0);
+
+    if ($sidebar.length) {
+      $sidebar.css('width', width + 'px');
+    }
+
+    if ($leader.length) {
+      $leader.css('width', width + 'px');
+    }
+  }
+
+  adjustSidebarWidth();
+  $(window).on('resize', adjustSidebarWidth);
+
+});
+
+
+  </script>
+</body>
+
+</html>

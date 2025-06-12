@@ -1,0 +1,119 @@
+{
+  "season": "2015-16",
+  "game_id": "0021500599",
+  "team_abbr": "ATL",
+  "opponent_abbr": "MIL",
+  "matchup": "ATL vs MIL",
+  "players": [
+    {
+      "name": "Kent Bazemore",
+      "school": "Old Dominion",
+      "school_type": "College",
+      "conference": "SB",
+      "player_id": 203145,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 7.0,
+        "ast": 3.0,
+        "reb": 0.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.095,
+        "assists_pct": 0.125,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Paul Millsap",
+      "school": "Louisiana Tech",
+      "school_type": "College",
+      "conference": "CUSA",
+      "player_id": 200794,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 23.0,
+        "ast": 6.0,
+        "reb": 10.0,
+        "stl": 2.0,
+        "blk": 4.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.311,
+        "assists_pct": 0.25,
+        "rebounds_pct": 0.385,
+        "defense_pct": 0.545
+      }
+    },
+    {
+      "name": "Al Horford",
+      "school": "Florida",
+      "school_type": "College",
+      "conference": "SEC",
+      "player_id": 201143,
+      "position": "Center-Forward",
+      "country": "Dominican Republic",
+      "game_stats": {
+        "pts": 18.0,
+        "ast": 2.0,
+        "reb": 8.0,
+        "stl": 0.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.243,
+        "assists_pct": 0.083,
+        "rebounds_pct": 0.308,
+        "defense_pct": 0.182
+      }
+    },
+    {
+      "name": "Kyle Korver",
+      "school": "Creighton",
+      "school_type": "College",
+      "conference": "BE",
+      "player_id": 2594,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 17.0,
+        "ast": 3.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.23,
+        "assists_pct": 0.125,
+        "rebounds_pct": 0.154,
+        "defense_pct": 0.182
+      }
+    },
+    {
+      "name": "Jeff Teague",
+      "school": "Wake Forest",
+      "school_type": "College",
+      "conference": "ACC",
+      "player_id": 201952,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 9.0,
+        "ast": 10.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.122,
+        "assists_pct": 0.417,
+        "rebounds_pct": 0.154,
+        "defense_pct": 0.091
+      }
+    }
+  ]
+}

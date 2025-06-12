@@ -1,0 +1,119 @@
+{
+  "season": "2018-19",
+  "game_id": "0021800498",
+  "team_abbr": "OKC",
+  "opponent_abbr": "HOU",
+  "matchup": "OKC vs HOU",
+  "players": [
+    {
+      "name": "Paul George",
+      "school": "Fresno St.",
+      "school_type": "College",
+      "conference": "MWC",
+      "player_id": 202331,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 28.0,
+        "ast": 2.0,
+        "reb": 14.0,
+        "stl": 3.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.315,
+        "assists_pct": 0.143,
+        "rebounds_pct": 0.35,
+        "defense_pct": 0.2
+      }
+    },
+    {
+      "name": "Jerami Grant",
+      "school": "Syracuse",
+      "school_type": "College",
+      "conference": "ACC",
+      "player_id": 203924,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 15.0,
+        "ast": 0.0,
+        "reb": 9.0,
+        "stl": 2.0,
+        "blk": 3.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.169,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.225,
+        "defense_pct": 0.333
+      }
+    },
+    {
+      "name": "Steven Adams",
+      "school": "Pittsburgh",
+      "school_type": "College",
+      "conference": "ACC",
+      "player_id": 203500,
+      "position": "Center",
+      "country": "New Zealand",
+      "game_stats": {
+        "pts": 17.0,
+        "ast": 3.0,
+        "reb": 7.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.191,
+        "assists_pct": 0.214,
+        "rebounds_pct": 0.175,
+        "defense_pct": 0.067
+      }
+    },
+    {
+      "name": "Terrance Ferguson",
+      "school": "Adelaide",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1628390,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 8.0,
+        "ast": 0.0,
+        "reb": 1.0,
+        "stl": 0.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.09,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.025,
+        "defense_pct": 0.067
+      }
+    },
+    {
+      "name": "Russell Westbrook",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "B10",
+      "player_id": 201566,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 21.0,
+        "ast": 9.0,
+        "reb": 9.0,
+        "stl": 4.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.236,
+        "assists_pct": 0.643,
+        "rebounds_pct": 0.225,
+        "defense_pct": 0.333
+      }
+    }
+  ]
+}
