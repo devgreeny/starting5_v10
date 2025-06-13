@@ -1,0 +1,120 @@
+{
+  "season": "2015-16",
+  "game_id": "0021500265",
+  "team_abbr": "ORL",
+  "opponent_abbr": "MIN",
+  "matchup": "ORL vs MIN",
+  "game_date": "December 1st, 2015",
+  "players": [
+    {
+      "name": "Channing Frye",
+      "school": "Arizona",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 101112,
+      "position": "Forward-Center",
+      "country": "USA",
+      "game_stats": {
+        "pts": 0.0,
+        "ast": 1.0,
+        "reb": 5.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.0,
+        "assists_pct": 0.071,
+        "rebounds_pct": 0.167,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Tobias Harris",
+      "school": "Tennessee",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 202699,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 13.0,
+        "ast": 1.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.228,
+        "assists_pct": 0.071,
+        "rebounds_pct": 0.133,
+        "defense_pct": 0.2
+      }
+    },
+    {
+      "name": "Nikola Vučević",
+      "school": "USC",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 202696,
+      "position": "Center",
+      "country": "Montenegro",
+      "game_stats": {
+        "pts": 18.0,
+        "ast": 4.0,
+        "reb": 12.0,
+        "stl": 2.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.316,
+        "assists_pct": 0.286,
+        "rebounds_pct": 0.4,
+        "defense_pct": 0.6
+      }
+    },
+    {
+      "name": "Evan Fournier",
+      "school": "Poitiers Basket 86",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 203095,
+      "position": "Guard-Forward",
+      "country": "France",
+      "game_stats": {
+        "pts": 12.0,
+        "ast": 3.0,
+        "reb": 1.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.211,
+        "assists_pct": 0.214,
+        "rebounds_pct": 0.033,
+        "defense_pct": 0.2
+      }
+    },
+    {
+      "name": "Elfrid Payton",
+      "school": "Louisiana",
+      "school_type": "College",
+      "conference": "Sun Belt Conference",
+      "player_id": 203901,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 14.0,
+        "ast": 5.0,
+        "reb": 8.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.246,
+        "assists_pct": 0.357,
+        "rebounds_pct": 0.267,
+        "defense_pct": 0.0
+      }
+    }
+  ]
+}

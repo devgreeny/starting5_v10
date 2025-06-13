@@ -102,6 +102,19 @@ def generate_quiz_from_season(season, save_dir):
             home_abbr = df[df["TEAM_ID"] == home_id]["TEAM_ABBREVIATION"].iloc[0]
             away_abbr = df[df["TEAM_ID"] == away_id]["TEAM_ABBREVIATION"].iloc[0]
             matchup_str = f"{away_abbr} vs {home_abbr}"
+            game_date = header.get("GAME_DATE_EST") or header.get("GAME_DATE")
+            if game_date:
+                try:
+                    from datetime import datetime
+                    dt = datetime.fromisoformat(str(game_date))
+                    day = dt.day
+                    if 10 <= day % 100 <= 20:
+                        suffix = "th"
+                    else:
+                        suffix = {1:"st",2:"nd",3:"rd"}.get(day % 10, "th")
+                    game_date = f"{dt.strftime('%B')} {day}{suffix}, {dt.year}"
+                except Exception:
+                    game_date = str(game_date)
 
             team_lineups = []
             for team_id in [home_id, away_id]:
@@ -122,6 +135,7 @@ def generate_quiz_from_season(season, save_dir):
                     "team_abbr": team_abbr,
                     "opponent_abbr": opp_abbr,
                     "matchup": matchup_str,
+                    "game_date": str(game_date),
                     "players": []
                 }
 

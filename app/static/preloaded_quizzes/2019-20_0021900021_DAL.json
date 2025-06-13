@@ -1,0 +1,120 @@
+{
+  "season": "2019-20",
+  "game_id": "0021900021",
+  "team_abbr": "DAL",
+  "opponent_abbr": "NOP",
+  "matchup": "DAL vs NOP",
+  "game_date": "October 25th, 2019",
+  "players": [
+    {
+      "name": "Courtney Lee",
+      "school": "Western Kentucky",
+      "school_type": "College",
+      "conference": "Conference USA",
+      "player_id": 201584,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 2.0,
+        "ast": 0.0,
+        "reb": 0.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.028,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Dorian Finney-Smith",
+      "school": "Florida",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 1627827,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 7.0,
+        "ast": 2.0,
+        "reb": 6.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.097,
+        "assists_pct": 0.118,
+        "rebounds_pct": 0.214,
+        "defense_pct": 0.125
+      }
+    },
+    {
+      "name": "Kristaps Porziņģis",
+      "school": "Cajasol Sevilla",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 204001,
+      "position": "Forward-Center",
+      "country": "Latvia",
+      "game_stats": {
+        "pts": 24.0,
+        "ast": 3.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 5.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.333,
+        "assists_pct": 0.176,
+        "rebounds_pct": 0.143,
+        "defense_pct": 0.625
+      }
+    },
+    {
+      "name": "Jalen Brunson",
+      "school": "Villanova",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 1628973,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 14.0,
+        "ast": 2.0,
+        "reb": 8.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.194,
+        "assists_pct": 0.118,
+        "rebounds_pct": 0.286,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Luka Dončić",
+      "school": "Real Madrid",
+      "school_type": "International",
+      "conference": "Other",
+      "player_id": 1629029,
+      "position": "Forward-Guard",
+      "country": "Slovenia",
+      "game_stats": {
+        "pts": 25.0,
+        "ast": 10.0,
+        "reb": 10.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.347,
+        "assists_pct": 0.588,
+        "rebounds_pct": 0.357,
+        "defense_pct": 0.25
+      }
+    }
+  ]
+}

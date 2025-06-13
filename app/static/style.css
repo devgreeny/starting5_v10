@@ -250,14 +250,13 @@ body {
 /* ────────────────────────────────────────────────────────────────────────── */
 /* 13) Hint Text */
 .hint-text {
-  position: absolute;
-  bottom: 0.44rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 0.44rem;
+  width: 90%;
   font-size: 0.484rem;
   color: var(--blue);
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .correct{display:block;margin-top:1rem;font-size:.75rem;color: var(--green);}

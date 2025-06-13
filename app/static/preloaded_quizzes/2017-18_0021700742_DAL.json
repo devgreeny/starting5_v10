@@ -1,0 +1,120 @@
+{
+  "season": "2017-18",
+  "game_id": "0021700742",
+  "team_abbr": "DAL",
+  "opponent_abbr": "MIA",
+  "matchup": "MIA vs DAL",
+  "game_date": "January 29th, 2018",
+  "players": [
+    {
+      "name": "Harrison Barnes",
+      "school": "South Carolina",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 203084,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 20.0,
+        "ast": 0.0,
+        "reb": 2.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.278,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.118,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Maxi Kleber",
+      "school": "Bayern Munich",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1628467,
+      "position": "Forward",
+      "country": "Germany",
+      "game_stats": {
+        "pts": 9.0,
+        "ast": 0.0,
+        "reb": 0.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.125,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Dirk Nowitzki",
+      "school": "DJK Wurzburg",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1717,
+      "position": "Forward",
+      "country": "Germany",
+      "game_stats": {
+        "pts": 10.0,
+        "ast": 1.0,
+        "reb": 6.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.139,
+        "assists_pct": 0.071,
+        "rebounds_pct": 0.353,
+        "defense_pct": 0.4
+      }
+    },
+    {
+      "name": "Wesley Matthews",
+      "school": "Marquette",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 202083,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 19.0,
+        "ast": 3.0,
+        "reb": 7.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.264,
+        "assists_pct": 0.214,
+        "rebounds_pct": 0.412,
+        "defense_pct": 0.4
+      }
+    },
+    {
+      "name": "Dennis Smith Jr.",
+      "school": "USC Upstate",
+      "school_type": "College",
+      "conference": "Big South Conference",
+      "player_id": 1628372,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 14.0,
+        "ast": 10.0,
+        "reb": 2.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.194,
+        "assists_pct": 0.714,
+        "rebounds_pct": 0.118,
+        "defense_pct": 0.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "season": "2010-11",
+  "game_id": "0021000395",
+  "team_abbr": "CHI",
+  "opponent_abbr": "LAC",
+  "matchup": "LAC vs CHI",
+  "game_date": "December 18th, 2010",
+  "players": [
+    {
+      "name": "Luol Deng",
+      "school": "Duke",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 2736,
+      "position": "Forward",
+      "country": "United Kingdom",
+      "game_stats": {
+        "pts": 17.0,
+        "ast": 2.0,
+        "reb": 8.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.215,
+        "assists_pct": 0.167,
+        "rebounds_pct": 0.381,
+        "defense_pct": 0.2
+      }
+    },
+    {
+      "name": "Carlos Boozer",
+      "school": "Duke",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 2430,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 25.0,
+        "ast": 1.0,
+        "reb": 4.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.316,
+        "assists_pct": 0.083,
+        "rebounds_pct": 0.19,
+        "defense_pct": 0.4
+      }
+    },
+    {
+      "name": "Taj Gibson",
+      "school": "USC",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201959,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 3.0,
+        "ast": 0.0,
+        "reb": 2.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.038,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.095,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Keith Bogans",
+      "school": "Kentucky",
+      "school_type": "College",
+      "conference": "Southeastern Conference",
+      "player_id": 2586,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 0.0,
+        "ast": 1.0,
+        "reb": 1.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.0,
+        "assists_pct": 0.083,
+        "rebounds_pct": 0.048,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Derrick Rose",
+      "school": "Memphis",
+      "school_type": "College",
+      "conference": "American Athletic Conference",
+      "player_id": 201565,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 34.0,
+        "ast": 8.0,
+        "reb": 6.0,
+        "stl": 0.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.43,
+        "assists_pct": 0.667,
+        "rebounds_pct": 0.286,
+        "defense_pct": 0.4
+      }
+    }
+  ]
+}

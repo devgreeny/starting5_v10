@@ -1,0 +1,120 @@
+{
+  "season": "2023-24",
+  "game_id": "0022300472",
+  "team_abbr": "POR",
+  "opponent_abbr": "DAL",
+  "matchup": "POR vs DAL",
+  "game_date": "January 3rd, 2024",
+  "players": [
+    {
+      "name": "Jerami Grant",
+      "school": "Syracuse",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 203924,
+      "position": "Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 10,
+        "ast": 2,
+        "reb": 1,
+        "stl": 0,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.238,
+        "assists_pct": 0.167,
+        "rebounds_pct": 0.05,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Toumani Camara",
+      "school": "Dayton",
+      "school_type": "College",
+      "conference": "Atlantic 10 Conference",
+      "player_id": 1641739,
+      "position": "Forward",
+      "country": "Belgium",
+      "game_stats": {
+        "pts": 10,
+        "ast": 0,
+        "reb": 5,
+        "stl": 2,
+        "blk": 1
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.238,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.25,
+        "defense_pct": 0.6
+      }
+    },
+    {
+      "name": "Ibou Badji",
+      "school": "FC Barcelona",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1630641,
+      "position": "Center",
+      "country": "Senegal",
+      "game_stats": {
+        "pts": 0,
+        "ast": 0,
+        "reb": 4,
+        "stl": 0,
+        "blk": 2
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.0,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.2,
+        "defense_pct": 0.4
+      }
+    },
+    {
+      "name": "Anfernee Simons",
+      "school": "Edgewater HS (FL)",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1629014,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 15,
+        "ast": 3,
+        "reb": 5,
+        "stl": 0,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.357,
+        "assists_pct": 0.25,
+        "rebounds_pct": 0.25,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Scoot Henderson",
+      "school": "NBA G League Ignite",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 1630703,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 7,
+        "ast": 7,
+        "reb": 5,
+        "stl": 0,
+        "blk": 0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.167,
+        "assists_pct": 0.583,
+        "rebounds_pct": 0.25,
+        "defense_pct": 0.0
+      }
+    }
+  ]
+}

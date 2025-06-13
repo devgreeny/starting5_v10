@@ -1,0 +1,120 @@
+{
+  "season": "2016-17",
+  "game_id": "0021600224",
+  "team_abbr": "OKC",
+  "opponent_abbr": "SAC",
+  "matchup": "OKC vs SAC",
+  "game_date": "November 23rd, 2016",
+  "players": [
+    {
+      "name": "Andre Roberson",
+      "school": "Colorado",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 203460,
+      "position": "Guard-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 10.0,
+        "ast": 1.0,
+        "reb": 5.0,
+        "stl": 1.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.135,
+        "assists_pct": 0.067,
+        "rebounds_pct": 0.192,
+        "defense_pct": 0.273
+      }
+    },
+    {
+      "name": "Domantas Sabonis",
+      "school": "Gonzaga",
+      "school_type": "College",
+      "conference": "West Coast Conference",
+      "player_id": 1627734,
+      "position": "Forward-Center",
+      "country": "Lithuania",
+      "game_stats": {
+        "pts": 4.0,
+        "ast": 3.0,
+        "reb": 0.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.054,
+        "assists_pct": 0.2,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.091
+      }
+    },
+    {
+      "name": "Steven Adams",
+      "school": "Pittsburgh",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 203500,
+      "position": "Center",
+      "country": "New Zealand",
+      "game_stats": {
+        "pts": 11.0,
+        "ast": 0.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.149,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.154,
+        "defense_pct": 0.182
+      }
+    },
+    {
+      "name": "Victor Oladipo",
+      "school": "Indiana",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203506,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 18.0,
+        "ast": 2.0,
+        "reb": 6.0,
+        "stl": 1.0,
+        "blk": 2.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.243,
+        "assists_pct": 0.133,
+        "rebounds_pct": 0.231,
+        "defense_pct": 0.273
+      }
+    },
+    {
+      "name": "Russell Westbrook",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 201566,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 31.0,
+        "ast": 9.0,
+        "reb": 11.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.419,
+        "assists_pct": 0.6,
+        "rebounds_pct": 0.423,
+        "defense_pct": 0.182
+      }
+    }
+  ]
+}

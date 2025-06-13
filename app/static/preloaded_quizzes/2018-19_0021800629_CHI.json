@@ -1,0 +1,120 @@
+{
+  "season": "2018-19",
+  "game_id": "0021800629",
+  "team_abbr": "CHI",
+  "opponent_abbr": "GSW",
+  "matchup": "CHI vs GSW",
+  "game_date": "January 11th, 2019",
+  "players": [
+    {
+      "name": "Chandler Hutchison",
+      "school": "Boise State",
+      "school_type": "College",
+      "conference": "Mountain West Conference",
+      "player_id": 1628990,
+      "position": "Forward-Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 6.0,
+        "ast": 0.0,
+        "reb": 6.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.113,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.3,
+        "defense_pct": 0.25
+      }
+    },
+    {
+      "name": "Lauri Markkanen",
+      "school": "Arizona",
+      "school_type": "College",
+      "conference": "Big 12 Conference",
+      "player_id": 1628374,
+      "position": "Forward-Center",
+      "country": "Finland",
+      "game_stats": {
+        "pts": 8.0,
+        "ast": 0.0,
+        "reb": 5.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.151,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.25,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Wendell Carter Jr.",
+      "school": "Duke",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 1628976,
+      "position": "Center-Forward",
+      "country": "USA",
+      "game_stats": {
+        "pts": 4.0,
+        "ast": 1.0,
+        "reb": 5.0,
+        "stl": 1.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.075,
+        "assists_pct": 0.167,
+        "rebounds_pct": 0.25,
+        "defense_pct": 0.25
+      }
+    },
+    {
+      "name": "Zach LaVine",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203897,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 29.0,
+        "ast": 0.0,
+        "reb": 4.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.547,
+        "assists_pct": 0.0,
+        "rebounds_pct": 0.2,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Kris Dunn",
+      "school": "Providence",
+      "school_type": "College",
+      "conference": "Big East Conference",
+      "player_id": 1627739,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 6.0,
+        "ast": 5.0,
+        "reb": 0.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.113,
+        "assists_pct": 0.833,
+        "rebounds_pct": 0.0,
+        "defense_pct": 0.5
+      }
+    }
+  ]
+}

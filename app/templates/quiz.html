@@ -106,7 +106,12 @@
     <!-- ── Header ─────────────────────────────────────────────────────────── -->
     <div class="header-container">
       <div class="header-title">WHERE DID THESE PLAYERS PLAY BEFORE THE NBA?</div>
-      <div class="header-matchup"><span>{{ data.matchup }}</span></div>
+      <div class="header-matchup">
+        <span>
+          {{ data.team_abbr }} starting 5 vs {{ data.opponent_abbr }}
+          {% if data.game_date %}from {{ data.game_date }}{% endif %}
+        </span>
+      </div>
       <div class="header-game_id"><span>Game ID: {{ data.game_id }}</span></div>
     </div>
 

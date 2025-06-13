@@ -1,0 +1,120 @@
+{
+  "season": "2020-21",
+  "game_id": "0022000017",
+  "team_abbr": "MEM",
+  "opponent_abbr": "SAS",
+  "matchup": "SAS vs MEM",
+  "game_date": "December 23rd, 2020",
+  "players": [
+    {
+      "name": "Dillon Brooks",
+      "school": "Oregon",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 1628415,
+      "position": "Guard-Forward",
+      "country": "Canada",
+      "game_stats": {
+        "pts": 16.0,
+        "ast": 6.0,
+        "reb": 4.0,
+        "stl": 2.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.182,
+        "assists_pct": 0.25,
+        "rebounds_pct": 0.129,
+        "defense_pct": 0.25
+      }
+    },
+    {
+      "name": "Kyle Anderson",
+      "school": "UCLA",
+      "school_type": "College",
+      "conference": "Big Ten Conference",
+      "player_id": 203937,
+      "position": "Forward-Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 7.0,
+        "ast": 2.0,
+        "reb": 10.0,
+        "stl": 0.0,
+        "blk": 0.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.08,
+        "assists_pct": 0.083,
+        "rebounds_pct": 0.323,
+        "defense_pct": 0.0
+      }
+    },
+    {
+      "name": "Jonas Valančiūnas",
+      "school": "Lietuvos rytas Vilnius",
+      "school_type": "Other",
+      "conference": "Other",
+      "player_id": 202685,
+      "position": "Center",
+      "country": "Lithuania",
+      "game_stats": {
+        "pts": 15.0,
+        "ast": 2.0,
+        "reb": 13.0,
+        "stl": 1.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.17,
+        "assists_pct": 0.083,
+        "rebounds_pct": 0.419,
+        "defense_pct": 0.25
+      }
+    },
+    {
+      "name": "Grayson Allen",
+      "school": "Duke",
+      "school_type": "College",
+      "conference": "Atlantic Coast Conference",
+      "player_id": 1628960,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 6.0,
+        "ast": 5.0,
+        "reb": 2.0,
+        "stl": 0.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.068,
+        "assists_pct": 0.208,
+        "rebounds_pct": 0.065,
+        "defense_pct": 0.125
+      }
+    },
+    {
+      "name": "Ja Morant",
+      "school": "Murray State",
+      "school_type": "College",
+      "conference": "Missouri Valley Conference",
+      "player_id": 1629630,
+      "position": "Guard",
+      "country": "USA",
+      "game_stats": {
+        "pts": 44.0,
+        "ast": 9.0,
+        "reb": 2.0,
+        "stl": 2.0,
+        "blk": 1.0
+      },
+      "game_contribution_pct": {
+        "points_pct": 0.5,
+        "assists_pct": 0.375,
+        "rebounds_pct": 0.065,
+        "defense_pct": 0.375
+      }
+    }
+  ]
+}
